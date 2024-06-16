@@ -1,0 +1,14 @@
+{
+  "name": "hex1-keeper",
+  "version": "1.0.0",
+  "main": "src/keeper.mjs",
+  "scripts": {
+    "start": "node src/keeper.mjs"
+  },
+  "author": "Hex One Protocol",
+  "license": "ISC",
+  "description": "Hex One Protocol TWAP Keeper",
+  "dependencies": {
+    "ethers": "^6.12.1"
+  }
+}
