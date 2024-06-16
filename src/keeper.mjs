@@ -3,13 +3,13 @@ import { ethers } from "ethers";
 
 const PERIOD = 300000;
 
-var provider;
-var keeper;
-var feed;
+const PROVIDER = new ethers.JsonRpcProvider(process.env.RPC_URL);
+const KEEPER = new ethers.Wallet(process.env.PRIVATE_KEY, PROVIDER);
+const FEED = new ethers.Contract(process.env.FEED_ADDR, FEED_ABI, KEEPER);
 
 const update = async () => {
     try {
-        const tx = await feed.update();
+        const tx = await FEED.update();
         await tx.wait();
         console.log(`Update transaction hash: ${tx.hash} confirmed at ${new Date().toISOString()}`);
     } catch (error) {
@@ -18,10 +18,6 @@ const update = async () => {
 }
 
 const main = async () => {
-    provider = new ethers.JsonRpcProvider(process.env.RPC_URL);
-    keeper = new ethers.Wallet(process.env.PRIVATE_KEY, provider);
-    feed = new ethers.Contract(process.env.FEED_ADDR, FEED_ABI, keeper);
-
     console.log(`Starting update process with RPC_URL: ${process.env.RPC_URL} and FEED_ADDR: ${process.env.FEED_ADDR}...`);
 
     await update();

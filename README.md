@@ -14,7 +14,7 @@ docker build . --tag hex1-keeper
 docker run hex1-keeper
 ```
 
-### Deploy Container to GCP
+### Deploy Container to GCP [REMOVE THIS]
 1. Build the docker image by running the following command:
 ```zsh
 docker build . --tag hex1-keeper --platform linux/amd64
