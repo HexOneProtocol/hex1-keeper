@@ -28,8 +28,8 @@ COPY --chown=node:node . ./
 
 # Set the environment variables
 ENV RPC_URL https://rpc.pulsechain.com
-ENV FEED_ADDR feed-address-here
-ENV PRIVATE_KEY private-key-here
+ENV FEED_ADDR 0x5d07dF5C5bf6Be1d0d5dA53DFEdc50B374EB7f82
+ENV PRIVATE_KEY your-private-key
 
 # Start the keeper
 CMD ["npm", "start"]

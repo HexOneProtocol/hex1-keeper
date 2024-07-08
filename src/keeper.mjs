@@ -1,7 +1,7 @@
 import { FEED_ABI } from "./abi/feed-abi.mjs";
 import { ethers } from "ethers";
 
-const PERIOD = 300000;
+const PERIOD = 31000;
 
 const PROVIDER = new ethers.JsonRpcProvider(process.env.RPC_URL);
 const KEEPER = new ethers.Wallet(process.env.PRIVATE_KEY, PROVIDER);
